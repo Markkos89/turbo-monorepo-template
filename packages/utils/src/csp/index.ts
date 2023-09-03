@@ -67,6 +67,7 @@ const cspDev = {
   "img-src": ["'self'"],
   "script-src": ["'self'", "'unsafe-eval'", "'unsafe-inline'"],
   "style-src": ["'self'", "'unsafe-inline'"],
+  "manifest-src": ["'self'"],
 } satisfies CspDirectives;
 
 const nextThemesHash = "'sha256-eMuh8xiwcX72rRYNAGENurQBAcH7kLlAUQcoOri3BIo='";
@@ -80,6 +81,7 @@ const cspProd = {
   "img-src": ["'self'"],
   "script-src": ["'self'", nextThemesHash],
   "style-src": ["'self'", "'unsafe-inline'"],
+  "manifest-src": ["'self'"],
 } satisfies CspDirectives;
 
 export const getCspContent = (inlineScript: string): string => {
