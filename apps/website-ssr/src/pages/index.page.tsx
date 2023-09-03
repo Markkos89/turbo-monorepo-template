@@ -9,7 +9,7 @@ export default function Home({ pwa }: InferGetServerSidePropsType<typeof getServ
         <title>Turbo Monorepo — Website SSR</title>
         <meta
           name="description"
-          content="Replacement for EKS. (Still doesn't support ISO timestamps.)"
+          content="Turbo Monorepo Website with server side features enabled"
         />
       </Head>
 
