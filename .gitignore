@@ -14,6 +14,7 @@ storybook-static/
 .env.*
 !.env.example
 .eslintcache
+**/graph.svg
 
 # PWA files
 **/public/sw.js
