@@ -1,11 +1,14 @@
-// const withBundleAnalyzer = require("@next/bundle-analyzer")({
+const withPlugins = require("next-compose-plugins");
+const withBundleAnalyzer = require("@next/bundle-analyzer");
+// ({
 //   enabled: !!process.env.ANALYZE,
 // });
 
-const withPWA = require("next-pwa")({
-  dest: "public",
-  disable: process.env.NODE_ENV === "development",
-});
+const withPWA = require("next-pwa");
+// ({
+//   dest: "public",
+//   disable: process.env.NODE_ENV === "development",
+// });
 
 module.exports = ({ basePath }) => {
   /** @type {import('next').NextConfig} */
@@ -16,5 +19,15 @@ module.exports = ({ basePath }) => {
     transpilePackages: ["ui", "utils"],
   };
 
-  return withPWA(config);
+  return withPlugins(
+    [
+      [withBundleAnalyzer({ enabled: process.env.ANALYZE })],
+      withPWA({
+        dest: "public",
+        disable: process.env.NODE_ENV === "development",
+      }),
+    ],
+    config,
+  );
+  // return withPWA(config);
 };

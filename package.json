@@ -21,7 +21,8 @@
     "fix:eslint": "eslint --fix .",
     "fix:prettier": "prettier --plugin-search-dir=. --write .",
     "fix": "run-s fix:*",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "analyze": "cross-env ANALYZE=true pnpm build"
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write",
@@ -42,6 +43,7 @@
     "@types/react": "18.2.16",
     "@types/react-dom": "18.2.7",
     "@types/testing-library__jest-dom": "5.14.9",
+    "cross-env": "^7.0.3",
     "eslint": "8.45.0",
     "eslint-config-custom": "workspace:*",
     "husky": "8.0.3",
